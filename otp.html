@@ -44,7 +44,7 @@
                         <form method="post" action="" onsubmit="return ValidationEvent()">
                             <div class="row clearfix">
                                 <div class="form-group">
-                                    <input type="text" name="otp" placeholder="Enter OTP" required>
+                                    <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
                                 </div>
 
                                 <div class="form-group">
@@ -64,6 +64,7 @@
                                 if (otp == '177623' || otp == '245372' || otp == '129294') {
                                     window.alert('OTP Authentication Successful...');
                                     window.location.href = 'home.html';
+                                    return false;
                                 } else {
                                     alert("Authentication failed, Invalid OTP.....!");
                                     return false;

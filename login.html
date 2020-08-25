@@ -43,7 +43,7 @@
                     <!-- Login Form -->
                     <div class="quote-form align-content-center">
 
-                        <form method="post" action="#" onsubmit="return ValidationEvent()">
+                        <form method="post" action="" onsubmit="return ValidationEvent()">
                             <div class="row clearfix">
 
                                 <div class="form-group">
@@ -72,10 +72,17 @@
 
                                 // Conditions
                                 if (password == 'Rosaline-Poe-Pass' && email == 'RosalinePoe') {
-                                    window.alert('Authentication Successful...');
-                                    window.location.href = 'otp.html';
+
+                                    var r = confirm("Authentication Successful... Continue?");
+                                    if (r == true) {
+                                        window.location.href = "otp.html";
+                                        return false;
+                                    } else {
+                                        alert("Authentication canceled.....!");
+                                        return false;
+                                    }
                                 } else {
-                                    alert("Authenticaation failed, Invalid Credentials.....!");
+                                    alert("Authentication failed, Invalid Credentials.....!");
                                     return false;
                                 }
                             }
